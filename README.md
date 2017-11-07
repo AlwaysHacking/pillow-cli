@@ -1,4 +1,4 @@
-# pillow-cli  [![npm](https://img.shields.io/badge/npm-v0.1.0-blue.svg)](https://www.npmjs.com/package/pillow-cli)
+# pillow-cli  [![npm](https://img.shields.io/badge/npm-v0.1.1-blue.svg)](https://www.npmjs.com/package/pillow-cli)
 
 
 A CLI tool for booting modernized AngularJS projects.
