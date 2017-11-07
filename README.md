@@ -1,6 +1,6 @@
 # pillow-cli
 
-A CLI tool for booting modernized AngularJS projects. 
+🛌🏻 A CLI tool for booting modernized AngularJS projects.
 
 (Inspired by [vue-cli](https://github.com/vuejs/vue-cli) and [Create React App](https://github.com/facebookincubator/create-react-app), special thanks to [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/))
 
@@ -13,6 +13,8 @@ cd my-app
 npm install
 npm start
 ```
+
+<img src='https://user-images.githubusercontent.com/11406106/32485753-1e22d79e-c36a-11e7-8ac1-243bb0afa11e.jpg' width='600' alt='npm start'>
 
 Then open http://localhost:3000/ to see your app.
 When you’re ready to deploy to production, create a minified bundle with `npm run build`.
@@ -81,9 +83,13 @@ Runs the app in development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will automatically reload if you make changes to the code.<br>
-You will see the build errors and lint warnings in the console.
+You will see the build errors and lint warnings in the console and browser.
+
+<img src='https://user-images.githubusercontent.com/11406106/32486324-efd77c58-c36b-11e7-9902-eee6311e8052.jpg' width='600' alt='code error'>
 
 ### `npm run build` or `yarn build`
+
+<img src='https://user-images.githubusercontent.com/11406106/32485987-e72ea1cc-c36a-11e7-9f3f-887c7e4736cd.jpg' width='600' alt='npm run build'>
 
 Builds the app for production to the `dist` folder.<br>
 It correctly bundles AngularJS in production mode and optimizes the build for the best performance.
