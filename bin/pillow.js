@@ -56,7 +56,7 @@ function createProject(name) {
   checkNodeVersion()
   const spinner = ora(`Creating a new AngularJS project in ${chalk.green(root)}.`)
   spinner.start()
-  download('HaitianLiu/pillow-template', root, err => {
+  download('HaitianLiu/pillow-boilerplate', root, err => {
     spinner.stop()
     if (err) logger.fatal('Failed to : ' + err.message.trim())
     console.log();

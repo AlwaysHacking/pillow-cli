@@ -1,8 +1,15 @@
-# pillow-cli
+# pillow-cli  [![npm](https://img.shields.io/badge/npm-v0.1.0-blue.svg)](https://www.npmjs.com/package/pillow-cli)
 
-🛌🏻 A CLI tool for booting modernized AngularJS projects.
+
+A CLI tool for booting modernized AngularJS projects.
 
 (Inspired by [vue-cli](https://github.com/vuejs/vue-cli) and [Create React App](https://github.com/facebookincubator/create-react-app), special thanks to [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/))
+
+Pillow works on macOS, Windows, and Linux.
+
+If something doesn’t work, please [file an issue](https://github.com/HaitianLiu/pillow-cli/issues/new).
+
+Pillow creates project based on [pillow-boilerplate](https://github.com/HaitianLiu/pillow-boilerplate). Do not hesitate to [file an issue](https://github.com/HaitianLiu/pillow-boilerplate/issues/new), if you want more features support.
 
 ## Quick Overview
 
