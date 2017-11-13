@@ -11,6 +11,7 @@ const fs = require('fs-extra')
 const packageJson = require('../package.json')
 const checkNodeVersion = require('../lib/check-node-version')
 const logger = require('../lib/logger')
+const checkIfOnline = require('../lib/check-if-online')
 
 let projectName
 
@@ -41,7 +42,7 @@ program
   .parse(process.argv)
 
 /**
- * Show Help message if only run 'pillow'
+ * Show help message if only run 'pillow'
  */
 if (program.args.length < 1) return program.help()
 
@@ -54,38 +55,40 @@ function createProject(name) {
   const root = path.resolve(name);
   const appName = path.basename(root);
   checkNodeVersion()
-  const spinner = ora(`Creating a new AngularJS project in ${chalk.green(root)}.`)
-  spinner.start()
-  download('HaitianLiu/pillow-boilerplate', root, err => {
-    spinner.stop()
-    if (err) logger.fatal('Failed to : ' + err.message.trim())
-    console.log();
-    console.log(`Success! Created ${chalk.green(`${appName}`)} at ${chalk.green(`${root}`)}`)
-    console.log()
-    console.log(chalk.yellow(`Before you start, you need to install dependencies by running this:`))
-    console.log()
-    console.log(chalk.cyan(`  cd ${appName}`))
-    console.log(chalk.cyan(`  npm install`))
-    console.log()
-    console.log('After the installation is complete, you can run several commands:')
-    console.log()
-    console.log(chalk.cyan(`  npm start`))
-    console.log('    Starts the development server.')
-    console.log()
-    console.log(
-      chalk.cyan(`  npm run build`)
-    )
-    console.log('    Bundles the app into static files for production.')
-    console.log()
-    console.log(
-      chalk.cyan(`  npm run build --report`)
-    )
-    console.log('    Bundles the app into static files for production and view the bundle analyzer report.')
-    console.log()
-    console.log('We suggest that you begin by typing:')
-    console.log()
-    console.log(chalk.cyan(`  npm start`))
-    console.log()
-    console.log('Happy hacking!')
+  checkIfOnline().then(() => {
+    const spinner = ora(`Creating a new AngularJS project in ${chalk.green(root)}.`)
+    spinner.start()
+    download('HaitianLiu/pillow-boilerplate', root, err => {
+      spinner.stop()
+      if (err) logger.fatal('Failed to : ' + err.message.trim())
+      console.log();
+      console.log(`Success! Created ${chalk.green(`${appName}`)} at ${chalk.green(`${root}`)}`)
+      console.log()
+      console.log(chalk.yellow(`Before you start, you need to install dependencies by running this:`))
+      console.log()
+      console.log(chalk.cyan(`  cd ${appName}`))
+      console.log(chalk.cyan(`  npm install`))
+      console.log()
+      console.log('After the installation is complete, you can run several commands:')
+      console.log()
+      console.log(chalk.cyan(`  npm start`))
+      console.log('    Starts the development server.')
+      console.log()
+      console.log(
+        chalk.cyan(`  npm run build`)
+      )
+      console.log('    Bundles the app into static files for production.')
+      console.log()
+      console.log(
+        chalk.cyan(`  npm run build --report`)
+      )
+      console.log('    Bundles the app into static files for production and view the bundle analyzer report.')
+      console.log()
+      console.log('We suggest that you begin by typing:')
+      console.log()
+      console.log(chalk.cyan(`  npm start`))
+      console.log()
+      console.log('Happy hacking!')
+    })
   })
 }
