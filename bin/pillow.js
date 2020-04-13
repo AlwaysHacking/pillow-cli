@@ -5,8 +5,6 @@ const program = require('commander')
 const path = require('path')
 const ora = require('ora')
 const chalk = require('chalk')
-const home = require('user-home')
-const fs = require('fs-extra')
 
 const packageJson = require('../package.json')
 const checkNodeVersion = require('../lib/check-node-version')
